@@ -57,6 +57,7 @@ def localize(colors,measurements,motions,sensor_right,p_move):
 
     return p
 
+// sense: product
 def _sense(p, colors, measurement, sensor_right):
     # measurement is just one element of measurements
     q = [[0.0 for row in range(len(p[0]))] for col in range(len(p))]
@@ -73,6 +74,8 @@ def _sense(p, colors, measurement, sensor_right):
         for j in range(len(q[i])):
             q[i][j] /= s
     return q
+
+// move: convolution
 def _move(p, motion, p_move):
     # motion is just one element of motions
     q = [[0.0 for row in range(len(p[0]))] for col in range(len(p))]
